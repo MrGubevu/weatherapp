@@ -107,10 +107,14 @@ export default function App() {
           <Text style={styles.value}>Loading...</Text>
         )}
 
-        <View style={styles.column}>
-          <Text style={styles.value}>25°</Text>
-          <Text style={styles.label}>Current</Text>
-        </View>
+        {weatherData !== null ? (
+          <View style={styles.column}>
+            <Text style={styles.value}>{weatherData.temperature}°C</Text>
+            <Text style={styles.label}>Current</Text>
+          </View>
+        ) : (
+          <Text style={styles.value}>Loading...</Text>
+        )}
 
         {weatherData !== null ? (
           <View style={styles.column}>
@@ -121,60 +125,89 @@ export default function App() {
           <Text style={styles.value}>Loading...</Text>
         )}
       </View>
+
       <View style={styles.WeekForecastDiv}>
-        <View style={styles.dayContainer}>
-          <Text style={styles.value}>Tuesday</Text>
-          <Image
-            source={require("./assets/Icons/partlysunny@2x.png")}
-            style={styles.icons}
-          />
-          <Text style={styles.value}>25°C</Text>
-        </View>
+        {weatherData !== null ? (
+          <View style={styles.dayContainer}>
+            <Text style={styles.value}>Day 1</Text>
+            <Image
+              source={require("./assets/Icons/partlysunny@2x.png")}
+              style={styles.icons}
+            />
+            <Text style={styles.value}>25°C</Text>
+          </View>
+        ) : (
+          <Text style={styles.value}>Loading...</Text>
+        )}
 
-        <View style={styles.dayContainer}>
-          <Text style={styles.value}>Wednesday</Text>
+        {weatherData !== null ? (
+          <View style={styles.dayContainer}>
+            <Text style={styles.value}>Day 2</Text>
 
-          <Image
-            source={require("./assets/Icons/clear@2x.png")}
-            style={styles.icons}
-          />
-          <Text style={styles.value}>25°</Text>
-        </View>
-        <View style={styles.dayContainer}>
-          <Text style={styles.value}>Thursday</Text>
+            <Image
+              source={require("./assets/Icons/clear@2x.png")}
+              style={styles.icons}
+            />
+            <Text style={styles.value}>25°</Text>
+          </View>
+        ) : (
+          <Text style={styles.value}>Loading...</Text>
+        )}
 
-          <Image
-            source={require("./assets/Icons/rain@2x.png")}
-            style={styles.icons}
-          />
-          <Text style={styles.value}>24°</Text>
-        </View>
-        <View style={styles.dayContainer}>
-          <Text style={styles.value}>Friday</Text>
+        {weatherData !== null ? (
+          <View style={styles.dayContainer}>
+            <Text style={styles.value}>Day 3</Text>
 
-          <Image
-            source={require("./assets/Icons/rain@2x.png")}
-            style={styles.icons}
-          />
-          <Text style={styles.value}>30°</Text>
-        </View>
-        <View style={styles.dayContainer}>
-          <Text style={styles.value}>Saturday</Text>
+            <Image
+              source={require("./assets/Icons/rain@2x.png")}
+              style={styles.icons}
+            />
+            <Text style={styles.value}>24°</Text>
+          </View>
+        ) : (
+          <Text style={styles.value}>Loading...</Text>
+        )}
 
-          <Image
-            source={require("./assets/Icons/rain@2x.png")}
-            style={styles.icons}
-          />
-          <Text style={styles.value}>32°</Text>
-        </View>
-        <View style={styles.dayContainer}>
-          <Text style={styles.value}>Sunday</Text>
-          <Image
-            source={require("./assets/Icons/rain@2x.png")}
-            style={styles.icons}
-          />
-          <Text style={styles.value}>26°</Text>
-        </View>
+        {weatherData !== null ? (
+          <View style={styles.dayContainer}>
+            <Text style={styles.value}>Day 4</Text>
+
+            <Image
+              source={require("./assets/Icons/rain@2x.png")}
+              style={styles.icons}
+            />
+            <Text style={styles.value}>30°</Text>
+          </View>
+        ) : (
+          <Text style={styles.value}>Loading...</Text>
+        )}
+
+        {weatherData !== null ? (
+          <View style={styles.dayContainer}>
+            <Text style={styles.value}>Day 5</Text>
+
+            <Image
+              source={require("./assets/Icons/rain@2x.png")}
+              style={styles.icons}
+            />
+            <Text style={styles.value}>32°</Text>
+          </View>
+        ) : (
+          <Text style={styles.value}>Loading...</Text>
+        )}
+
+        {weatherData !== null ? (
+          <View style={styles.dayContainer}>
+            <Text style={styles.value}>Day 6</Text>
+            <Image
+              source={require("./assets/Icons/rain@2x.png")}
+              style={styles.icons}
+            />
+            <Text style={styles.value}>26°</Text>
+          </View>
+        ) : (
+          <Text style={styles.value}>Loading...</Text>
+        )}
       </View>
       <StatusBar style="auto" />
     </View>
